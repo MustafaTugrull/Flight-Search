@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    background-color: #E91932;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#tek_yonlu_label {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#tek_yonlu_label input {
+    white-space: nowrap;
+    margin-left: -175px;
+    height: 16px;
+    margin-bottom: -2px;
+    font-weight: bold;
+}
+
+
+button {
+    background-color: #E91932;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #212529;
+}
+
+#loading {
+    display: none;
+    text-align: center; /* Yazıyı ortalamak için */
+    margin-top: 10px; /* İstediğiniz boşluğu ayarlamak için */
+}
+
+#loading::after {
+    content: '...';
+    animation: dots 1s infinite; /* Nokta animasyonu */
+}
+
+
+@keyframes dots {
+            0%, 20% {
+                content: '\00a0\00a0\00a0'; /* Boşluk karakteri */
+            }
+            40% {
+                content: '.\00a0\00a0';
+            }
+            60% {
+                content: '..\00a0';
+            }
+            80%, 100% {
+                content: '...';
+            }
+        }

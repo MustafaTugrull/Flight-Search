@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>Uçuş Arama</title>
+</head>
+<body>
+    
+    <form id="searchForm">
+        <h1>Uçuş Arama</h1>
+        <label for="kalkis_havaalani">Kalkış Havaalanı:</label>
+        <input type="text" id="kalkis_havaalani" name="kalkis_havaalani" list="kalkis_havaalani_liste" required>
+        <datalist id="kalkis_havaalani_liste"></datalist>
+
+        <label for="varis_havaalani">Varış Havaalanı:</label>
+        <input type="text" id="varis_havaalani" name="varis_havaalani" list="varis_havaalani_liste" required>
+        <datalist id="varis_havaalani_liste"></datalist>
+
+        <label for="kalkis_tarihi">Kalkış Tarihi:</label>
+        <input type="text" id="kalkis_tarihi" name="kalkis_tarihi" required>
+
+        <label for="donus_tarihi">Dönüş Tarihi:</label>
+        <input type="text" id="donus_tarihi" name="donus_tarihi" required>
+
+        <div id="tek_yonlu_label">
+            <label for="tek_yonlu">Tek Yönlü Uçuş</label>
+            <input type="checkbox" id="tek_yonlu" name="tek_yonlu" onchange="handleTekYonluChange()">
+        </div>
+
+        <button type="button" onclick="ara()">Ara</button>
+        <!-- Sıralama seçeneği -->
+        <div id="sort" style="display: none;">
+            <label for="siralaUcuslari">Uçuşları Sırala:</label>
+        <select id="siralaUcuslari" onchange="handleSiralamaChange()">
+            <option value="kalkisSaatineGore">Kalkış Saatine Göre</option>
+            <option value="inisSaatineGore">İniş Saatine Göre</option>
+            <option value="ucusUzunlugunaGore">Uçuş Uzunluğuna Göre</option>
+            <option value="fiyataGore">Fiyata Göre</option>
+        </select>
+        </div>
+        
+
+        <div id="loading" style="display: none;">
+            Yükleniyor
+        </div>
+        <!-- Uçuş Sonuçları -->
+        <div id="sonuclar" class="mt-4"></div>
+
+        
+    </form>
+
+    <script src="/js/script.js"></script>
+    <script src="/server.js"></script>
+</body>
+</html>
